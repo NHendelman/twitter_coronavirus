@@ -6,7 +6,7 @@ This project attempts to analyze the various tweets of 2020, especially with reg
 
 ## Programming
 
-We use the `map.py` file to process a zip file for an individual day outputs a file with JSON formatted information tracking language, and country. For example, the command below runs the `map.py` file for geotagged tweets on January first.
+We use the `map.py` file to process a zip file for an individual day, which outputs a file with JSON formatted information tracking language, and country. For example, the command below runs the `map.py` file for geotagged tweets on January first.
 ```
 $ python3 ./src/map.py --input_path=/data/Twitter\ dataset/geoTwitter20-01-01.zip
 ```
@@ -14,7 +14,7 @@ The `run_maps.sh` is a shell script which runs the `map.py` on the zip files for
 ```
 $ nohup sh runmaps.sh & 
 ```
-The `reduce.py` file combines the map.py outputs so we can visualize the tweets within 2020. The command below creates `reduce.country` which lets us look at the hashtag use in each country.
+The `reduce.py` file combines the map.py outputs of each day so we can visualize the tweets within the year of 2020. The command below creates `reduce.country` which lets us look at the hashtag use in each country.
 ```
 $ python3 ./src/reduce.py --input_paths outputs/geoTwitter20-*.country --output_path=reduced.country
 ```
